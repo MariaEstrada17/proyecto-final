@@ -1,4 +1,11 @@
-import { IsEmail, IsInt, IsNotEmpty, Min } from 'class-validator';
+import {
+  IsEmail,
+  IsInt,
+  IsNotEmpty,
+  Min,
+  IsArray,
+  ArrayNotEmpty,
+} from 'class-validator';
 
 export class CreateEstudianteDto {
   @IsNotEmpty()
@@ -13,4 +20,9 @@ export class CreateEstudianteDto {
   @IsInt()
   @Min(1)
   edad: number;
+
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsInt({ each: true })
+  cursoIds: number[];
 }

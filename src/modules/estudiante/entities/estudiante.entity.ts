@@ -21,8 +21,8 @@ export class Estudiante {
   @Column()
   correo: string;
 
-  @Column()
-  edad: number;
+  @Column({ nullable: true })
+  edad?: number;
 
   @ManyToMany(() => Curso, (curso) => curso.estudiantes)
   @JoinTable()
