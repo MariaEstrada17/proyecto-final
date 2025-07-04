@@ -4,9 +4,9 @@ import {
   Post,
   Body,
   Param,
-  Put,
   Delete,
   ParseIntPipe,
+  Patch,
 } from '@nestjs/common';
 import { EstudianteService } from './estudiante.service';
 import { CreateEstudianteDto } from './dto/create-estudiante.dto';
@@ -31,14 +31,13 @@ export class EstudianteController {
     return this.service.findOne(id);
   }
 
-  @Put(':id')
+  @Patch(':id')
   update(
     @Param('id', ParseIntPipe) id: number,
     @Body() dto: UpdateEstudianteDto,
   ) {
     return this.service.update(id, dto);
   }
-
   @Delete(':id')
   remove(@Param('id', ParseIntPipe) id: number) {
     return this.service.remove(id);

@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
 import { Curso } from 'src/modules/curso/entities/curso.entity';
 
 @Entity()
@@ -19,5 +25,6 @@ export class Estudiante {
   edad: number;
 
   @ManyToMany(() => Curso, (curso) => curso.estudiantes)
+  @JoinTable()
   cursos: Curso[];
 }

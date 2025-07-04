@@ -28,9 +28,13 @@ export class EstudianteService {
   }
 
   async update(id: number, dto: UpdateEstudianteDto) {
-    await this.findOne(id);
-    await this.estudianteRepo.update(id, dto);
-    return this.findOne(id);
+    const estudiante = await this.estudianteRepo.findOneBy({ id });
+    if (!estudiante) {
+      throw new NotFoundException(`Estudiante con id ${id} no existe`);
+    }
+
+    Object.assign(estudiante, dto);
+    return this.estudianteRepo.save(estudiante);
   }
 
   async remove(id: number) {
