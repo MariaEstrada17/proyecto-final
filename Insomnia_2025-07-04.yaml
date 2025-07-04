@@ -1,0 +1,592 @@
+type: collection.insomnia.rest/5.0
+name: PROYECTO FINAL
+meta:
+  id: wrk_7a53d9b810754b40a3d3cde6ff421844
+  created: 1751508935419
+  modified: 1751638945446
+  description: ""
+collection:
+  - name: Estudiantes
+    meta:
+      id: fld_3c3aa8c57db8427395fdafeb3d13314c
+      created: 1751511978103
+      modified: 1751511978103
+      sortKey: -1751511978103
+      description: ""
+    children:
+      - url: http://localhost:3000/estudiantes
+        name: Crear estudiante
+        meta:
+          id: req_3629d9bf1cb8462abc4f82aaa97852f0
+          created: 1751508935809
+          modified: 1751642435467
+          isPrivate: false
+          description: ""
+          sortKey: -1751512006347
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nombre": "Carlos",
+              "apellido": "Pérez",
+              "correo": "carlos.perez@example.com",
+              "edad": 21,
+              "cursoIds": [1]
+            }
+        parameters:
+          - name: '"nombre"'
+            value: '"Laura",'
+            id: pair_d83ef5a770c24e289aed69245bbd81d6
+          - name: '"apellido"'
+            value: '"Gómez",'
+            id: pair_1f54bb483a2e4221a83ae60f0b578dfd
+          - name: "{"
+            value: ""
+            id: pair_b4e5e0bfd96f424db115749c439f8275
+          - name: '"correo"'
+            value: '"laura@email.com",'
+            id: pair_25028afeba73433cb023d59ea7c9e9d1
+          - name: '"edad"'
+            value: "21"
+            id: pair_1915445b9e3a4adca570045e7f6622d4
+          - name: "}"
+            value: ""
+            id: pair_aa37f5fc0c2a4255875cfc9dbc883a8e
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        scripts:
+          preRequest: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/estudiantes
+        name: Llamar todos
+        meta:
+          id: req_76925d0805d34517ab8a2b94db94474e
+          created: 1751511439647
+          modified: 1751639091710
+          isPrivate: false
+          description: ""
+          sortKey: -1751512006447
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/estudiantes/1
+        name: Eliminar
+        meta:
+          id: req_e54ee19d9df1417daf0110d26ea2da69
+          created: 1751511940803
+          modified: 1751512006094
+          isPrivate: false
+          description: ""
+          sortKey: -1751512006047
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/estudiantes/2
+        name: Obtener uno por ID
+        meta:
+          id: req_69eb75f9858a42ffb2292469cb954098
+          created: 1751512229590
+          modified: 1751639097069
+          isPrivate: false
+          description: ""
+          sortKey: -1751512006197
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/estudiantes/2
+        name: Actualizar
+        meta:
+          id: req_901903e2f4f24240a4c3c11cc8e08eca
+          created: 1751512254154
+          modified: 1751639116487
+          isPrivate: false
+          description: ""
+          sortKey: -1751512006097
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "edad": 20
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Curso
+    meta:
+      id: fld_43294108024c4c2f9b6bf90d11ef03dd
+      created: 1751512050936
+      modified: 1751512287033
+      sortKey: -1751512050936
+      description: ""
+    children:
+      - url: http://localhost:3000/cursos/1
+        name: Obtener uno por ID
+        meta:
+          id: req_099791b508f34fb493743198a33e2417
+          created: 1751511474625
+          modified: 1751643217149
+          isPrivate: false
+          description: ""
+          sortKey: -1751512290108
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/cursos/1
+        name: Actualizar
+        meta:
+          id: req_b9d96d1c325849a6b09a60edea20b205
+          created: 1751511520952
+          modified: 1751643283133
+          isPrivate: false
+          description: ""
+          sortKey: -1751512289908
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "duracionHoras": 10
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/cursos
+        name: Crear curso
+        meta:
+          id: req_955c37cf93db436c9cf680e4eb10c87c
+          created: 1751512073382
+          modified: 1751636220497
+          isPrivate: false
+          description: ""
+          sortKey: -1751512289708
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nombre": "Curso de logica",
+              "descripcion": "Curso básico de logica en Python",
+              "duracionHoras": 4
+            }
+        parameters:
+          - name: '"nombre"'
+            value: '"Laura",'
+            id: pair_d83ef5a770c24e289aed69245bbd81d6
+          - name: '"apellido"'
+            value: '"Gómez",'
+            id: pair_1f54bb483a2e4221a83ae60f0b578dfd
+          - name: "{"
+            value: ""
+            id: pair_b4e5e0bfd96f424db115749c439f8275
+          - name: '"correo"'
+            value: '"laura@email.com",'
+            id: pair_25028afeba73433cb023d59ea7c9e9d1
+          - name: '"edad"'
+            value: "21"
+            id: pair_1915445b9e3a4adca570045e7f6622d4
+          - name: "}"
+            value: ""
+            id: pair_aa37f5fc0c2a4255875cfc9dbc883a8e
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        scripts:
+          preRequest: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/cursos
+        name: "Llamar "
+        meta:
+          id: req_2a2467710c44431b820b8a956e5b2b7e
+          created: 1751512189861
+          modified: 1751512305163
+          isPrivate: false
+          description: ""
+          sortKey: -1751512289808
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/cursos/1
+        name: Eliminar
+        meta:
+          id: req_f263b7a3b2714dd98f150bce369b1856
+          created: 1751512269721
+          modified: 1751512319616
+          isPrivate: false
+          description: ""
+          sortKey: -1751512290008
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Profesor
+    meta:
+      id: fld_af3f8375bead40718536c0fe0e12ced5
+      created: 1751512477022
+      modified: 1751512477022
+      sortKey: -1751512477022
+      description: ""
+    children:
+      - url: http://localhost:3000/profesores
+        name: Crear
+        meta:
+          id: req_6e89cdeb8de44cdcb2109855b5e4c90b
+          created: 1751512488245
+          modified: 1751636142704
+          isPrivate: false
+          description: ""
+          sortKey: -1751512491267
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nombre": "Luisa",
+              "apellido": "Diaz",
+              "especialidad": "PHP",
+              "correo": "luisadiaz@gmail.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/profesores
+        name: Llamar todos
+        meta:
+          id: req_444cb7ae571449779cf2148127cce327
+          created: 1751636470364
+          modified: 1751636483920
+          isPrivate: false
+          description: ""
+          sortKey: -1751512491367
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/profesores/1
+        name: Obtener por ID
+        meta:
+          id: req_148a9db665e24890a35737ba7b889666
+          created: 1751636512164
+          modified: 1751643306826
+          isPrivate: false
+          description: ""
+          sortKey: -1751512491467
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/profesores/1
+        name: Editar
+        meta:
+          id: req_ce6f870551194516b37afededad95bec
+          created: 1751637186529
+          modified: 1751637218681
+          isPrivate: false
+          description: ""
+          sortKey: -1751512491567
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "apellido": "Estrada"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:3000/profesores/1"
+        name: Eliminar
+        meta:
+          id: req_008e09b8acd443d6a304509f21bda3fa
+          created: 1751637360659
+          modified: 1751637374949
+          isPrivate: false
+          description: ""
+          sortKey: -1751512491667
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Materias
+    meta:
+      id: fld_b93863cb329748d4baac774b715035b5
+      created: 1751512691260
+      modified: 1751512691260
+      sortKey: -1751512691260
+      description: ""
+    children:
+      - url: http://localhost:3000/materias
+        name: Crear
+        meta:
+          id: req_84866306d96a40dbb18beeab5814e47a
+          created: 1751512695196
+          modified: 1751636251534
+          isPrivate: false
+          description: ""
+          sortKey: -1751512695196
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nombre": "Logica 1",
+              "codigo": "Log1",
+              "creditos": 3,
+              "cursoId": 2,
+              "profesorId": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/materias
+        name: Llamar todas
+        meta:
+          id: req_4004428afc2e4776a5c27463377bfee6
+          created: 1751636410786
+          modified: 1751636436319
+          isPrivate: false
+          description: ""
+          sortKey: -1751636410786
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/materias/2
+        name: Obtener por ID
+        meta:
+          id: req_22359336aa0b422b9f2d59808ac68f83
+          created: 1751636583500
+          modified: 1751643342171
+          isPrivate: false
+          description: ""
+          sortKey: -1751636461475
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/materias/2
+        name: Editar
+        meta:
+          id: req_25ab69f46ca64a47a120c82a22653380
+          created: 1751636757032
+          modified: 1751637181832
+          isPrivate: false
+          description: ""
+          sortKey: -1751636757032
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "creditos": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:3000/materias/1"
+        name: Eliminar
+        meta:
+          id: req_14d2cff0e2594c84bb915976b61ca933
+          created: 1751637334485
+          modified: 1751637355403
+          isPrivate: false
+          description: ""
+          sortKey: -1751637334485
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b37ed600991b5eac111e0507bf048c40c8c41d25
+    created: 1751508935447
+    modified: 1751508935447
+environments:
+  name: Base Environment
+  meta:
+    id: env_b37ed600991b5eac111e0507bf048c40c8c41d25
+    created: 1751508935434
+    modified: 1751508935434
+    isPrivate: false
